@@ -1,4 +1,26 @@
-const PRODUCTS = [
+export interface Product {
+  id: string;
+  title: string;
+  price: number;
+  originalPrice: number | null;
+  category: string;
+  isNew: boolean;
+  isHot: boolean;
+  isSpecial: boolean;
+  subTitle: string;
+  rating: number;
+  images: string[];
+  description: string;
+  variations: {
+    colors: string[];
+    sizes: string[];
+    stock: {
+      [key: string]: number;
+    };
+  };
+}
+
+export const PRODUCTS: Product[] = [
   {
     id: "aop-oversized-tee",
     title: "D-blaq AOP Oversized T-Shirt",
